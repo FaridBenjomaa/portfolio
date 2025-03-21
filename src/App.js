@@ -1,12 +1,14 @@
+import Main from "./components/body/Main";
 import Header from "./components/header/Header";
+import About from "./components/body/About";
+import './index.css';
 
 function App() {
   return(
     <div>
       <Header />
-      <main className="container mt-5">
-        <h1>Bienvenue sur mon portfolio</h1>
-      </main>
+      <Main />
+      <About />
     </div>
   );
 }

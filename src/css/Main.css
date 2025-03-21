@@ -1,0 +1,67 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 80vh;
+    padding-right: 20px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.profile-pic {
+    width: 700px;
+    height: 700px;
+    margin-left: -9px;
+}
+
+.hero-right {
+    flex: 1;
+    text-align: center;
+    padding-left: 30px; 
+}
+
+.hero-name {
+    color: #1F2A59;
+} 
+
+.hero-title {
+    color: #1F2A59;
+    font-weight: 300;
+}
+
+.hero-description {
+    color: #1F2A59;
+    font-weight: 300;
+}
+
+  .btn-custom {
+    background-color: #00B4D8;
+    border: 2px solid #00B4D8;
+    color: white;
+    padding: 8px 50px;
+    border-radius: 30px;
+    font-weight: 300;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #1F2A59;
+    border-color: #1F2A59;
+    color: white; /* Reste blanc même au hover */
+  }
+
+  .btn-custom-outline {
+    background-color: transparent;
+    border: 2px solid #00B4D8;
+    color: #00B4D8;
+    padding: 8px 50px;
+    border-radius: 30px;
+    font-weight: 300;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-custom-outline:hover {
+    background-color: #1F2A59;
+    border-color: #1F2A59;
+    color: white; /* reste blanc même au hover */
+  }
