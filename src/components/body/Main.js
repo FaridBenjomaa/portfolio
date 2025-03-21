@@ -6,7 +6,7 @@ import "../../css/Main.css";
 const Main = () => {
     return (
         <div>
-       {/* About Section */}
+       {/* Hero Section */}
 <section className="hero py-5 bg-light" id="hero">
   <div className="container-fluid">
     <div className="row align-items-center">
