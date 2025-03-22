@@ -16,17 +16,17 @@ const Main = () => {
       </div>
 
       {/* Contenu du texte */}
-      <div className="col-md-6 text-md-center text-center">
-        <h1 className="hero-name fw-bold">Farid Benjomaa</h1>
-        <h2 className="hero-title fst-italic">Développeur Fullstack & Designer UI/UX</h2>
-        <p className="hero-description pt-5 pb-5">
+      <div className="col-md-6 text-md-center text-center py-5 my-5">
+        <h1 className="hero-name fw-bold mt-5">Farid Benjomaa</h1>
+        <h2 className="hero-title fst-italic ">Développeur Fullstack & Designer UI/UX</h2>
+        <p className="hero-description py-5 mt-5">
           Je crée des expériences digitales uniques à travers le code, le design et l’animation.
         </p>
 
         {/* Boutons */}
-        <div className="hero-buttons d-flex justify-content-between mx-5">
-          <a href="#projects" className="btn btn-custom rounded-pill me-3 ">Mes Projets</a>
-          <a href="#contact" className="btn rounded-pill btn-custom-outline">Me Contacter</a>
+        <div className="hero-buttons d-flex justify-content-center gap-3 me-5">
+          <a href="#projects" className="btn btn-custom rounded-pill mx-5">Mes Projets</a>
+          <a href="#contact" className="btn rounded-pill btn-custom-outline mx-5">Me Contacter</a>
         </div>
       </div>
     </div>
