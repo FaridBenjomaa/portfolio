@@ -9,6 +9,7 @@ const Header = () => {
 
     const isHeroVisible = useSectionInView("hero");
     const isAboutVisible = useSectionInView("about");
+    const isAboutVisible2 = useSectionInView("about2");
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">
             <div className="container">
@@ -40,7 +41,7 @@ const Header = () => {
                         <li className="nav-item">
                             <a
                                 href="#about"
-                                className={`nav-link ${isAboutVisible ? "active" : ""}`}
+                                className={`nav-link ${isAboutVisible ? "active" : ""} ${isAboutVisible2 ? "active" : ""}`}
                             >
                                 À Propos
                             </a>
