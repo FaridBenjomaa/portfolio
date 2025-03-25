@@ -19,3 +19,6 @@ yarn-error.log*
 
 # Swiper or Vite cache
 *.pack
+
+# Ouvre .gitignore et ajoute :
+node_modules/.cache/
