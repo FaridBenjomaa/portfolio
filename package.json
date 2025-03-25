@@ -11,9 +11,11 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "lottie-react": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
+    "react-simple-typewriter": "^5.0.1",
     "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },

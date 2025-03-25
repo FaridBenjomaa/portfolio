@@ -32,6 +32,7 @@
     margin-top: -55px;
     z-index: 2;
     position: relative;
+    
 }
 
 
@@ -47,6 +48,7 @@
     margin-top: -45px;
     margin-right: -95px;
     overflow: hidden;
+
   }
 
   .swiper-button-next-custom {
@@ -90,4 +92,45 @@
   .swiper-pagination {
     bottom: 50px !important; /* Remonte les points de 50px au-dessus du bas */
   }
+
+  .laptop-screen {
+    position: absolute;
+    bottom: 16%;         /* Distance entre le bas du conteneur et le bas de l’animation */
+    right: -18%;        /* Distance entre le bord droit du conteneur et l’animation */
+    width: 80%;          /* Largeur de l’animation par rapport au laptop */
+    height: 80%;         /* Hauteur de l’animation */
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .laptop-screen > div {
+      width: 100%;
+      height: 120%;
+    }
+  
+    .interface-lottie {
+      position: absolute;
+      top: 0%;
+      left: -42%; 
+      width: 930px;
+      height: 830px;
+      z-index: 24;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;  
+      clip-path: inset(0 0 0 35%);
+    }
+    
+    .interface-lottie > div {
+      width: 1600px;
+      height: 2800px;
+      object-fit: contain;
+      overflow: hidden;  /* Assure-toi de masquer les débordements */
+    }
+    
   
