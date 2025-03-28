@@ -25,7 +25,7 @@ const Caroussel = () => {
         <i className={`bi bi-chevron-right ${activeIndex === 0 ? 'text-white' : 'text-dark'}`}></i>
       </div>
       <div ref={prevRef} className="swiper-button-prev-custom" style={{ background: "transparent", margin: "10px", visibility: activeIndex > 0 ? "visible" : "hidden" }}>
-        <i className={`bi bi-chevron-left ${activeIndex === 1 ? 'text-white' : 'text-dark'}`}></i>
+        <i className={`bi bi-chevron-left ${activeIndex === 1 ? 'text-dark' : 'text-dark'}`}></i>
       </div>
       <Swiper
         slidesPerView={1}

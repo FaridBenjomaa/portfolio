@@ -3,20 +3,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../css/Header.css";
 import useSectionInView from "../../hooks/useSectionInView";
-
+import { Link } from 'react-router-dom';  // Importation de Link
 
 const Header = () => {
 
     const isHeroVisible = useSectionInView("hero");
     const isAboutVisible = useSectionInView("about");
     const isAboutVisible2 = useSectionInView("about2");
+    const isServiceVisible = useSectionInView("services");
+
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">
             <div className="container">
                 {/* Logo */}
-                <a className="navbar-brand" href="#hero">
+                <Link className="navbar-brand" to="/">
                     <img src="/img/logo/Logo.svg" alt="Logo" style={{ height: "50px", width: "auto" }} />
-                </a>
+                </Link>
 
                 {/* Bouton Menu Mobile */}
                 <button
@@ -31,24 +33,38 @@ const Header = () => {
                 {/* Liens de Navigation */}
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item"><a
-                            href="#hero"
-                            className={`nav-link ${isHeroVisible ? "active" : ""}`}
-                        >
-                            Accueil
-                        </a>
-                        </li>
                         <li className="nav-item">
                             <a
-                                href="#about"
+            
+                                href="/#hero"
+                                className={`nav-link ${isHeroVisible ? "active" : ""}`}
+                            >
+                                Accueil
+                            </a>
+                        </li>
+                        {/* Utiliser <a> pour gérer l'ancre dans la même page */}
+                        <li className="nav-item">
+                            <a
+                                href="/#about"
                                 className={`nav-link ${isAboutVisible ? "active" : ""} ${isAboutVisible2 ? "active" : ""}`}
                             >
                                 À Propos
                             </a>
                         </li>
-                        <li className="nav-item"><a className="nav-link" href="#">Mes Services</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Projets</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
+                        <li className="nav-item">
+                            <Link
+                                to="/services"
+                                className={`nav-link ${isServiceVisible ? "active" : ""}`}
+                            >
+                                Mes Services
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <a href="#projet" className="nav-link">Projets</a> {/* Ancre pour Projet */}
+                        </li>
+                        <li className="nav-item">
+                            <a href="#cont" className="nav-link">Contact</a> {/* Ancre pour Contact */}
+                        </li>
                     </ul>
                 </div>
 
@@ -74,7 +90,6 @@ const Header = () => {
             </div>
         </nav>
     );
-
-}
+};
 
 export default Header;

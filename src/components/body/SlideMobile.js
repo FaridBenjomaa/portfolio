@@ -2,6 +2,8 @@ import React from "react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "../../css/Caroussel.css";
+import mobileInterfaceAnimation from '../../assets/animations/mobile.json';
+import Lottie from 'lottie-react';
 
 
 const SlideMobile = () => {
@@ -25,7 +27,8 @@ const SlideMobile = () => {
             </div>
 
             <div className="col-6 p-0 d-flex justify-content-end align-items-end ">
-            <img src="../../img/photo/Smartphone.svg" alt="Mobile" className="right-smartphone" />
+            <Lottie animationData={mobileInterfaceAnimation} loop={true} className="right-smartphone" />
+            {/* <img src="../../img/photo/Smartphone.svg" alt="Mobile" className="right-smartphone" /> */}
             </div>
           </div>
 
