@@ -3,14 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../css/Header.css";
 import useSectionInView from "../../hooks/useSectionInView";
-import { Link } from 'react-router-dom';  // Importation de Link
+import { Link, useLocation } from 'react-router-dom';
+
 
 const Header = () => {
 
     const isHeroVisible = useSectionInView("hero");
     const isAboutVisible = useSectionInView("about");
     const isAboutVisible2 = useSectionInView("about2");
-    const isServiceVisible = useSectionInView("services");
+    const location = useLocation();
 
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">
@@ -35,7 +36,6 @@ const Header = () => {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <a
-            
                                 href="/#hero"
                                 className={`nav-link ${isHeroVisible ? "active" : ""}`}
                             >
@@ -54,16 +54,26 @@ const Header = () => {
                         <li className="nav-item">
                             <Link
                                 to="/services"
-                                className={`nav-link ${isServiceVisible ? "active" : ""}`}
+                                className={`nav-link ${location.pathname === "/services" ? "active" : ""}`}
                             >
                                 Mes Services
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="#projet" className="nav-link">Projets</a> {/* Ancre pour Projet */}
+                            <Link
+                                to="/projets"
+                                className={`nav-link ${location.pathname === "/projets" ? "active" : ""}`}
+                            >
+                                Projets
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="#cont" className="nav-link">Contact</a> {/* Ancre pour Contact */}
+                            <Link
+                                to="/contact"
+                                className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}
+                            >
+                                Contact
+                            </Link>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,4 @@
 .services-container {
-  font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   margin-top:  60px;
 }
@@ -12,7 +11,7 @@
 
 .hero-section h1 {
   font-size: 2.5rem;
-  font-weight: bold;
+  color: #1F2A59;
   margin-bottom: 1rem;
 }
 
@@ -26,6 +25,7 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: visible; /* Empêche les enfants d'être coupés */
+  align-items: stretch; /* Ajout pour uniformiser la hauteur des colonnes */
 }
 
 .vertical-line {
@@ -99,24 +99,26 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   position: relative;
   z-index: 10;
-  height: 300px; /* Hauteur fixe pour uniformiser la taille des cartes */
+  width: 100%; /* S'assurer que les cartes occupent toute la largeur */
+  max-width: 100%; /* S'assurer que les cartes ne dépassent pas la largeur de la grille */
+  min-height: 450px; /* Ajout pour uniformiser la taille des cartes */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Alignement uniforme du contenu */
 }
 
 .service-block.developpement-web {
-  background-color: #e3f2fd;
+  background-color: #1F2A59;
 }
 
 .service-block.design-uiux {
-  background-color: #fce4ec;
+  background-color: #ffffff;
   grid-column: 1 / 2; /* Positionner à gauche */
   grid-row: 1; /* Première rangée */
 }
 
 .service-block.motion-design {
-  background-color: #ede7f6;
+  background-color: #ffffff;
   grid-column: 2 / 3; /* Positionner à droite */
   grid-row: 2; /* Deuxième rangée */
 }
@@ -132,17 +134,17 @@
 }
 
 .service-block.logos-identite {
-  background-color: #fff3e0;
+  background-color: #ffffff;
   grid-column: 1 / 2; /* Positionner à gauche */
   grid-row: 3; /* Troisième rangée */
 }
 
 .service-block.developpement-mobile {
-  background-color: #e8f5e9;
+  background-color: #1F2A59;
 }
 
 .service-block.optimisation {
-  background-color: #f9fbe7;
+  background-color: #1F2A59;
 }
 
 .service-block:nth-child(odd) {
@@ -153,21 +155,6 @@
   margin-top: 6rem; /* Décalage pour alterner les cartes */
 }
 
-.service-block h3 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.service-block ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.service-block ul li {
-  margin-bottom: 0.5rem;
-  color: #666;
-}
-
 .service-block.left-align {
   grid-column: 1 / 2; /* Positionner à gauche de la barre */
   justify-self: start; /* Aligner la carte à gauche */
@@ -175,7 +162,6 @@
 
 .service-block.right-align {
   grid-column: 2 / 3; /* Positionner à droite de la barre */
-  width: auto; /* Réduire la largeur pour éviter qu'elle occupe toute la section */
 }
 
 .service-block.center-align {
@@ -198,7 +184,56 @@
 }
 
 .section-bg {
-  background-image: url('../../public/img/photo/Background.png'); /* Ajouter une image de fond */
+  background-image: url('../../public/img/backgrounds/tech-grid.png');
   background-size: cover;
   background-position: center;
+}
+
+.h3-primary {
+  font-size: 1.5rem;
+  color: #ffffff; /* Couleur principale */
+  font-weight: 300;
+  font-style: italic;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.h3-secondary {
+  font-size: 1.5rem;
+  color: #1F2A59; /* Couleur secondaire */
+  font-weight: 300;
+  font-style: italic;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.ul-primary {
+  list-style-type: none;
+  padding: 0;
+}
+.ul-primary li {
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* Couleur principale */
+  padding: 0.5rem 0;
+
+}
+.ul-primary li::before {
+  content: "•"; /* Utiliser un point pour la liste */
+  color: #ffffff; /* Couleur principale */
+  margin-right: 0.5rem;
+}
+
+.ul-secondary {
+  list-style-type: none;
+  padding: 0;
+}
+.ul-secondary li {
+  margin-bottom: 0.5rem;
+  color: #1F2A59; /* Couleur secondaire */
+  padding: 0.5rem 0;
+}
+.ul-secondary li::before {
+  content: "•"; /* Utiliser un point pour la liste */
+  color: #1F2A59; /* Couleur secondaire */
+  margin-right: 0.5rem;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"; 
 import "../../css/Main.css";
 
@@ -25,8 +26,8 @@ const Main = () => {
 
         {/* Boutons */}
         <div className="hero-buttons d-flex justify-content-center gap-3 me-5">
-          <a href="#projects" className="btn btn-custom rounded-pill mx-5">Mes Projets</a>
-          <a href="#contact" className="btn rounded-pill btn-custom-outline mx-5">Me Contacter</a>
+          <Link to="/projets" className="btn btn-custom rounded-pill mx-5">Mes Projets</Link>
+          <Link to="/contact" className="btn rounded-pill btn-custom-outline mx-5">Me Contacter</Link>
         </div>
       </div>
     </div>

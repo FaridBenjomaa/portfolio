@@ -1,9 +1,22 @@
 import React from 'react';
 import "../../css/Services.css";
 
+const ServiceCard = ({ title, items, titleClass, listClass, blockClass }) => (
+  <div className={`service-block ${blockClass}`}>
+    <div className="service-content">
+      <h3 className={titleClass} dangerouslySetInnerHTML={{ __html: title }} />
+      <ul className={listClass}>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
 const Services = () => {
   return (
-    <div className="services-container bg-light">
+    <section id="services" className="services-container bg-light">
       <div className="hero-section text-center bg-light">
         <h1>Mes Services : Une Expertise Complète en Développement & Design</h1>
         <p>Développement, UI/UX, Motion Design, Identité Visuelle : je conçois des solutions digitales performantes dans les domaines où j'excelle :</p>
@@ -14,16 +27,24 @@ const Services = () => {
         <div className="services-grid">
           <div className="vertical-line"></div>
           <div className="icon developpement-web-icon"></div>
-          <div className="service-block developpement-web right-align">
-            <div className="service-content">
-              <h3>Développement Web & API</h3>
-              <ul>
-                <li>Création d'applications sur mesure</li>
-                <li>Conception d'architectures robustes</li>
-                <li>Technologies : React, Node.js, API REST</li>
-              </ul>
-            </div>
-          </div>
+
+          <ServiceCard
+            title={`Développement Web & API`}
+            items={[
+              "Création d'applications sur mesure",
+              "Conception d'architectures robustes",
+              "Technologies : React, Node.js, API REST",
+              "Sécurité : Authentification JWT, protection des routes",
+              "Optimisation des performances backend & frontend",
+              "Tests automatisés (unitaires & fonctionnels)",
+              "CI/CD : Intégration et déploiement automatisé",
+              "Documentation d’API via Swagger / Postman"
+            ]}
+            titleClass="h3-primary"
+            listClass="ul-primary"
+            blockClass="developpement-web right-align"
+          />
+
         </div>
       </div>
 
@@ -32,38 +53,46 @@ const Services = () => {
         <div className="services-grid">
           <div className="vertical-line"></div>
           <div className="icon design-uiux-icon"></div>
-          <div className="service-block design-uiux left-align">
-            <div className="service-content">
-              <h3>Design UI/UX & Prototypage</h3>
-              <ul>
-                <li>Conception d'interfaces modernes</li>
-                <li>Prototypage et optimisation pour l'utilisateur</li>
-                <li>Outils : Figma, Adobe XD</li>
-              </ul>
-            </div>
-          </div>
+          <ServiceCard
+            title={`Design UI/UX & Prototypage`}
+            items={[
+              "Conception d'interfaces modernes",
+              "Prototypage et optimisation pour l'utilisateur",
+              "Outils : Figma, Adobe XD",
+              "Compétences : Wireframing, Prototypage interactif, Design system, Responsive Design,",
+              "Ergonomie web, Tests utilisateurs, Adobe XD, Figma"
+            ]}
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
+            blockClass="design-uiux left-align"
+          />
           <div className="icon motion-design-icon"></div>
-          <div className="service-block motion-design right-align">
-            <div className="service-content">
-              <h3>Motion Design & Animations UI</h3>
-              <ul>
-                <li>Création d'animations engageantes</li>
-                <li>Amélioration de l'expérience utilisateur</li>
-                <li>Outils : After Effects, Lottie</li>
-              </ul>
-            </div>
-          </div>
+          <ServiceCard
+            title={`Motion Design & Animations UI`}
+            items={[
+              "Création d'animations engageantes",
+              "Amélioration de l'expérience utilisateur",
+              "Outils : After Effects, Lottie, Adobe Premiere",
+              "Compétences : Animation UI/UX, transitions interactives, storytelling visuel"
+            ]}
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
+            blockClass="motion-design right-align"
+          />
           <div className="icon logos-identite-icon"></div>
-          <div className="service-block logos-identite left-align">
-            <div className="service-content">
-              <h3>Création de Logos & Identité Visuelle</h3>
-              <ul>
-                <li>Conception de logos professionnels</li>
-                <li>Création d'identités visuelles uniques</li>
-                <li>Outils : Adobe Illustrator, Photoshop</li>
-              </ul>
-            </div>
-          </div>
+          <ServiceCard
+            title={`Création de Logos <br /> & <br /> Identité Visuelle`}
+            items={[
+              "Conception de logos professionnels",
+              "Création d'identités visuelles uniques",
+              "Outils : Adobe Illustrator, Photoshop",
+              "Compétences : création vectorielle, charte graphique, design typographique",
+              "Supports : cartes de visite, affiches, mockups web & print"
+            ]}
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
+            blockClass="logos-identite left-align"
+          />
         </div>
       </div>
 
@@ -72,29 +101,38 @@ const Services = () => {
         <div className="services-grid">
           <div className="vertical-line"></div>
           <div className="icon developpement-mobile-icon"></div>
-          <div className="service-block developpement-mobile right-align">
-            <div className="service-content">
-              <h3>Développement Mobile (iOS & Android)</h3>
-              <ul>
-                <li>Applications mobiles fluides et optimisées</li>
-                <li>Technologies : Swift, Kotlin, React Native</li>
-              </ul>
-            </div>
-          </div>
+          <ServiceCard
+            title={`Développement Mobile <br /> (iOS & Android)`}
+            items={[
+              "Applications mobiles fluides et optimisées",
+              "Expérience utilisateur mobile-first",
+              "Intégration avec Firebase, API REST",
+              "Déploiement App Store & Google Play",
+              "Technologies : Swift, Kotlin, React Native, Flutter(Dart)",
+              "Compétences : gestion des états, navigation, base de données embarquées",
+              "Fonctionnalités : notifications push, géolocalisation, accès natif caméra"
+            ]}
+            titleClass="h3-primary"
+            listClass="ul-primary"
+            blockClass="developpement-mobile right-align"
+          />
           <div className="icon optimisation-icon"></div>
-          <div className="service-block optimisation">
-            <div className="service-content">
-              <h3>Optimisation & Déploiement</h3>
-              <ul>
-                <li>Amélioration des performances</li>
-                <li>CI/CD et hébergement cloud</li>
-                <li>Outils : AWS, Docker</li>
-              </ul>
-            </div>
-          </div>
+          <ServiceCard
+            title={`Optimisation & Déploiement`}
+            items={[
+              "Amélioration des performances",
+              "CI/CD et hébergement cloud",
+              "Outils : AWS, Docker, OVH, Infomaniak",
+              "Compétences : GitLab CI, Nginx, PM2, sécurité et monitoring",
+              "Méthodes : automatisation des tests & déploiement, logs centralisés"
+            ]}
+            titleClass="h3-primary"
+            listClass="ul-primary"
+            blockClass="optimisation"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

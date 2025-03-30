@@ -1,5 +1,6 @@
 import Main from "./Main";
 import About from "./About";
+
 import '../../index.css';
 import React, { useEffect } from 'react';
 
@@ -29,6 +30,7 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
+      
     
     </div>
     

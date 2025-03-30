@@ -22,3 +22,6 @@ yarn-error.log*
 
 # Ouvre .gitignore et ajoute :
 node_modules/.cache/
+
+.env
+# .env.local
