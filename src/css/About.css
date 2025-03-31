@@ -1,35 +1,79 @@
 .about-section {
-    background: url("/public/img/photo/Background.png") no-repeat center center;
-    height: 100vh;
-    color: white;
-  }
+  background: url("/public/img/photo/Background.png") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  padding: 15px;
+  margin-top: 0; /* Supprimer la marge en haut de la section About */
+  padding-top: 0; /* Supprimer le padding en haut de la section About */
+}
 
- 
-  
-  .profile-pic-rounded {
-    width: 60%;
-    height: 60%;
-  }
-  
-  /* Texte aligné proprement */
-  .about-text-content {
-    margin-top: 300px;
-    margin-left: 100px;
-    text-align: center;
+.profile-pic-rounded {
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.about-expertise {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.expertise-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 30px;
   }
   
   .about-title {
     font-size: 4rem;
-    font-weight: 500;
   }
   
   .about-description {
     font-size: 1.3rem;
-    margin: 10px 0;
   }
   
   .about-expertise {
     font-size: 1.3rem;
-    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
     text-align: center;
   }
+  
+  .profile-pic-rounded {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 2rem;
+    justify-content: center !important;
+  }
+}
+
+.main-section {
+  margin-bottom: 0; /* Supprimer l'espacement en bas de la section Main */
+  padding-bottom: 0; /* Supprimer le padding en bas de la section Main */
+}

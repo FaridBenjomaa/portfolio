@@ -14,6 +14,9 @@ const Projects = () => {
       <section className="projects-list">
         <p className="projects-placeholder">🛠 Les projets seront bientôt affichés ici.</p>
       </section>
+
+      
+      
     </div>
   );
 };

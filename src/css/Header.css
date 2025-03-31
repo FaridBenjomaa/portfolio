@@ -1,36 +1,157 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Layout global du navbar-collapse */
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* Container menu principal */
+.navbar-menu-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation principale */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar-nav .nav-link {
-    color: #1F2A59 !important;
-    font-weight: 500;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+  color: #1F2A59 !important;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00B4D8 !important;
+  border-bottom: 2px solid #00B4D8;
+}
+
+.navbar-nav .nav-link.active {
+  color: #00B4D8 !important;
+  border-bottom: 2px solid #00B4D8;
+}
+
+/* Séparateur visible entre menu et icônes sociales */
+.nav-separator {
+  display: none; /* Par défaut caché, visible seulement en desktop */
+}
+
+/* Les icônes sociales */
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social-icons a {
+  color: #1F2A59;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* Hover spécifique à LinkedIn */
+.social-icons a[href*="linkedin"]:hover {
+  color: #00B4D8;
+}
+
+/* Hover GitHub */
+.social-icons a[href*="github"]:hover {
+  color: #00B4D8;
+}
+
+/* ---- Media Queries pour rendre le site responsive ---- */
+/* Mode desktop (écrans larges) */
+@media only screen and (min-width: 992px) {
+  .navbar-menu-container {
+    justify-content: center;
   }
   
-  /* Hover : bleu + souligné */
-  .navbar-nav .nav-link:hover {
-    color: #00B4D8 !important;
-    border-bottom: 2px solid #00B4D8;
+  /* Affichage du séparateur en mode desktop */
+  .nav-separator {
+    display: block;
+    height: 30px;
+    width: 1px;
+    background-color: #e0e0e0;
+    margin: 0 15px;
   }
-
-  .navbar-nav .nav-link.active {
-    color: #00B4D8 !important;
-    border-bottom: 2px solid #00B4D8;
+  
+  .social-icons {
+    width: auto;
+    margin-top: 0;
   }
-
+  
   .social-icons a {
-    color: #1F2A59; /* Couleur par défaut personnalisée */
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
+    font-size: 1.8rem;
+    margin-left: 15px;
   }
-  
-  /* Hover spécifique à LinkedIn */
-  .social-icons a[href*="linkedin"]:hover {
-    color: #00B4D8;
-  }
-  
-  /* Hover GitHub (par exemple, un bleu foncé stylisé) */
-  .social-icons a[href*="github"]:hover {
-    color: #00B4D8;
-  }
+}
 
+/* Mode tablette et mobile */
+@media only screen and (max-width: 991px) {
+  .navbar-collapse {
+    flex-direction: column;
+  }
   
+  .navbar-menu-container {
+    width: 100%;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+  }
+  
+  .social-icons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+}
+
+/* Mode très petits écrans (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+  
+  .social-icons a {
+    font-size: 1.3rem;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+  }
+}

@@ -1,70 +1,190 @@
+/* Hero Section Styles */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    height: 95vh;
-    padding-right: 20px;
-    margin-top: 70px;
-    overflow: hidden;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer le contenu de la section */
+  text-align: center; /* Centrer le texte */
+  overflow: hidden;
+  margin-left: 0; /* Supprimer la marge à gauche */
+  padding-left: 0; 
 }
 
 .profile-pic {
-    width: 930px;
-    height: 930px;
-    margin-left: -9px;
-}
-
-.hero-right {
-    flex: 1;
-    text-align: center;
-    padding-left: 30px; 
+  max-width: 120%;
+  height: auto;
+  transition: transform 0.3s ease;
+  margin-left: -1rem;
 }
 
 .hero-name {
-    color: #1F2A59;
-    font-size: 4rem;
-} 
+  color: #1F2A59;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 6rem;
+  transition: font-size 0.3s ease;
+}
 
 .hero-title {
-    color: #1F2A59;
-    font-size: 2rem;
-    font-weight: 300;
+  color: #1F2A59;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  transition: font-size 0.3s ease;
 }
 
 .hero-description {
-    color: #1F2A59;
-    font-size: 1.3rem;
-    font-weight: 300;
+  color: #1F2A59;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-  .btn-custom {
-    background-color: #00B4D8;
-    border: 2px solid #00B4D8;
-    color: white;
-    padding: 4px 50px;
-    border-radius: 30px;
-    font-size: 2rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .btn-custom:hover {
-    background-color: #1F2A59;
-    border-color: #1F2A59;
-    color: white; /* Reste blanc même au hover */
-  }
+.hero .container {
+  margin-left: 0; /* Supprimer la marge à gauche */
+  padding-left: 0; /* Supprimer le padding à gauche du container */
+}
 
-  .btn-custom-outline {
-    background-color: transparent;
-    border: 2px solid #00B4D8;
-    color: #00B4D8;
-    padding: 4px 50px;
-    border-radius: 30px;
-    font-size: 2rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+/* Boutons */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem; /* Espacement entre les boutons */
+  justify-content: center; /* Centrer les boutons */
+}
+
+.btn-custom {
+  background-color: #00B4D8;
+  border: 2px solid #00B4D8;
+  color: white;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #1F2A59;
+  border-color: #1F2A59;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-outline {
+  background-color: transparent;
+  border: 2px solid #00B4D8;
+  color: #00B4D8;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+  background-color: #1F2A59;
+  border-color: #1F2A59;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .hero-name {
+    font-size: 3rem;
   }
   
-  .btn-custom-outline:hover {
-    background-color: #1F2A59;
-    border-color: #1F2A59;
-    color: white; /* reste blanc même au hover */
+  .hero-title {
+    font-size: 1.6rem;
   }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .btn-custom, .btn-custom-outline {
+    font-size: 1.1rem;
+    padding: 8px 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    max-width: 70%;
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-name {
+    font-size: 2.8rem;
+  }
+  
+  .hero-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+  }
+  
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  .btn-custom, .btn-custom-outline {
+    font-size: 1rem;
+    padding: 8px 20px;
+    width: 80%;
+    max-width: 250px;
+    margin: 0.5rem auto;
+  }
+  
+  .hero-buttons {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 80px;
+  }
+  
+  .profile-pic {
+    max-width: 90%;
+  }
+  
+  .hero-name {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 1.1rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+  }
+  
+  .btn-custom, .btn-custom-outline {
+    font-size: 0.9rem;
+    padding: 7px 15px;
+  }
+}
