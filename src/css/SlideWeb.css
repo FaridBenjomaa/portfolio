@@ -1,0 +1,164 @@
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.col-md-6 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-md-start {
+  text-align: center;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Laptop container and elements */
+.laptop-container {
+  width: 110%;
+  height: auto;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Laptop frame positioned behind the animation */
+.laptop-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  /* Lower z-index to be behind animation */
+}
+
+/* Lottie animation container */
+.lottie-container {
+  position: relative;
+  width: 103%;
+  height: auto;
+  z-index: 2;
+  /* Higher z-index to be in front of laptop */
+  overflow: hidden;
+}
+
+.laptop-animation {
+  margin-top: 4rem;
+  margin-left: 7rem;
+  width: 90%;
+  height: auto;
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+
+  /* Adjust the Lottie animation size on smaller screens */
+  .laptop-animation {
+    width: 49%;
+    /* Reduces the size of Lottie animation on mobile */
+    margin-top: 1rem;
+    /* Adjusts the top margin */
+    margin-right: 1.8rem;
+    /* Adjusts the right margin */
+  }
+
+  .laptop-container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    width: 50%;
+  }
+
+  .text-md-start {
+    text-align: left;
+  }
+
+  .p-md-5 {
+    padding: 3rem;
+  }
+
+  .justify-content-md-end {
+    justify-content: flex-end;
+  }
+
+  .laptop-container {
+    margin: 1rem 0 1rem auto;
+  }
+
+  .laptop-animation {
+    width: 80%;
+    /* Adjusts the size of Lottie animation for larger screens */
+  }
+}
+
+@media (max-width: 575px) {
+  .laptop-container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .laptop-container {
+    max-width: 600px;
+  }
+}

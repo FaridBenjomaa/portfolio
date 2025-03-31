@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,25 +8,58 @@ import SlideDesign from "./SlideDesign";
 import SlideMobile from "./SlideMobile";
 import SlideWeb from "./SlideWeb";
 
-
 const Caroussel = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const nextRef = React.useRef(null);
-  const prevRef = React.useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const nextRef = useRef(null);
+  const prevRef = useRef(null);
+
+  // Check if on mobile device on component mount and window resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
   };
 
-  
   return (
     <section className="container-fluid about-section-2 bg-light" id="about2">
-      <div ref={nextRef} className="swiper-button-next-custom" style={{ background: "transparent", margin: "10px", visibility: activeIndex < 2 ? "visible" : "hidden" }}>
-        <i className={`bi bi-chevron-right ${activeIndex === 0 ? 'text-white' : 'text-dark'}`}></i>
+      <div 
+        ref={nextRef} 
+        className="swiper-button-next-custom" 
+        style={{ 
+          background: "transparent", 
+          margin: "10px", 
+          visibility: activeIndex < 2 ? "visible" : "hidden" 
+        }}
+      >
+        <i className={`bi bi-chevron-right ${isMobile ? 'text-black' : activeIndex === 0 ? 'text-white' : 'text-dark'}`}></i>
       </div>
-      <div ref={prevRef} className="swiper-button-prev-custom" style={{ background: "transparent", margin: "10px", visibility: activeIndex > 0 ? "visible" : "hidden" }}>
-        <i className={`bi bi-chevron-left ${activeIndex === 1 ? 'text-dark' : 'text-dark'}`}></i>
+      
+      <div 
+        ref={prevRef} 
+        className="swiper-button-prev-custom" 
+        style={{ 
+          background: "transparent", 
+          margin: "10px", 
+          visibility: activeIndex > 0 ? "visible" : "hidden" 
+        }}
+      >
+        <i className={`bi bi-chevron-left ${isMobile ? 'text-black' : 'text-dark'}`}></i>
       </div>
+      
       <Swiper
         slidesPerView={1}
         pagination={{ clickable: true }}
@@ -46,21 +79,20 @@ const Caroussel = () => {
       >
         {/* Slide 1 */}
         <SwiperSlide>
-        <SlideWeb />
+          <SlideWeb />
         </SwiperSlide>
-
+        
         {/* Slide 2 */}
         <SwiperSlide>
-         <SlideDesign />
+          <SlideDesign />
         </SwiperSlide>
         
         {/* Slide 3 */}
         <SwiperSlide>
-        <SlideMobile />
+          <SlideMobile />
         </SwiperSlide>
       </Swiper>
     </section>
-
   );
 };
 
