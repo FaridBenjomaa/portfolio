@@ -1,7 +1,7 @@
 .right-smartphone {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+  width: 50%;
+
+  margin-right: 30%;
 }
 
 @media (max-width: 768px) {
@@ -11,7 +11,11 @@
   }
   
   .right-smartphone {
-    max-width: 300px;
+    width: 50%;
+    height: auto;
+    margin-top: -45px;
+    margin-right: -10%;
+    overflow: hidden;
   }
 }
 

@@ -10,10 +10,10 @@ const About = () => {
           <h2 className="about-title d-flex justify-content-center justify-content-md-end mx-2 mx-md-5 py-3 py-md-5">À propos de Moi</h2>
         </div>
         <div className="row d-flex align-items-center justify-content-center">
-          <div className="col-12 col-md-4 text-center">
+          <div className="col-12 col-md-6 text-center">
             <img src="/img/photo/profilPicture.png" alt="Farid Benjomaa" className="img-fluid profile-pic-rounded mb-4 mb-md-5" />
           </div>
-          <div className="col-12 col-md-8 p-3 p-md-4">
+          <div className="col-12 col-md-6 p-3 p-md-4">
             <p className="about-description py-2 py-md-3">
               Je suis Farid, un développeur fullstack et designer UI/UX passionné
               par la création de solutions numériques performantes. Mon parcours

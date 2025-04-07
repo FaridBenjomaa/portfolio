@@ -1,136 +1,134 @@
 .about-section-2 {
-    position: relative;
-    height: 95vh;
-    color: #1F2A59;
-    overflow: visible;
+  position: relative;
+  height: 100vh; /* Changed from 95vh for full height */
+  color: #1F2A59;
+  overflow: visible; /* Changed from visible to prevent scrollbars */
 }
 
 .swiper {
-    padding: 50px 0;
-    overflow-x: hidden;
-    overflow-y: visible;
+  overflow: visible; /* Changed from overflow-x to handle both directions */
+  height: 100%; /* Make swiper take full height */
 }
 
 .swiper-slide {
-    overflow: visible;
-    position: relative; /* important pour le positionnement */
-    z-index: 1;
+  overflow: visible; /* Changed from visible to prevent content overflow */
+  position: relative;
+  z-index: 1;
+  height: 100%; /* Ensure slides take full height */
+  display: flex;
+  align-items: center;
 }
 
 .swiper-pagination-bullet {
-    background: #00B4D8;
+  background: #00B4D8;
 }
 
-.left-laptop {
-    width: 930px;
-    height: 930px;
-    margin-right: -75px;
-    margin-top: -55px;
-    z-index: 2;
-    position: relative;
-     transform: translateX(39px); /* décale l’image sans margin négatif */
-    margin-top: -55px;
-    z-index: 2;
-    position: relative;
-    
+.swiper-button-next-custom,
+.swiper-button-prev-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 180, 216, 0.7); /* Added transparency */
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
 }
 
+.swiper-button-next-custom {
+  right: 10px;
+}
 
-  .right-laptop {
-    width: 930px;
-    height: 930px;
-    margin-top: -55px;
-  }
+.swiper-button-prev-custom {
+  left: 10px;
+}
 
-  .right-smartphone{
-     width: 930px;
-    height: 920px;
-    margin-top: -45px;
-    margin-right: -95px;
-    overflow: hidden;
+.swiper-button-next-custom:hover,
+.swiper-button-prev-custom:hover {
+  background-color: #1F2A59;
+}
 
-  }
+.swiper-pagination {
+  bottom: 20px !important; /* Adjusted from 50px */
+}
 
-  .swiper-button-next-custom {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 10;
-    background-color: #00B4D8;
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: background-color 0.3s ease;
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .about-section-2 {
+    height: auto;
+    min-height: 100vh;
   }
   
-  .swiper-button-next-custom:hover {
-    background-color: #1F2A59;
+  .swiper-slide {
+    padding: 60px 0; /* Add padding to prevent content being cut off */
   }
-
+  
+  .swiper-button-next-custom,
   .swiper-button-prev-custom {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: 10;
-    background-color: #00B4D8;
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: background-color 0.3s ease;
+    padding: 8px 12px;
+    font-size: 1.2rem;
   }
-  
-  .swiper-button-prev-custom:hover {
-    background-color: #1F2A59;
-  }
+}
 
+@media (max-width: 767px) {
   .swiper-pagination {
-    bottom: 50px !important; /* Remonte les points de 50px au-dessus du bas */
+    bottom: 10px !important;
   }
-
-  .laptop-screen {
-    position: absolute;
-    bottom: 16%;         /* Distance entre le bas du conteneur et le bas de l’animation */
-    right: -18%;        /* Distance entre le bord droit du conteneur et l’animation */
-    width: 80%;          /* Largeur de l’animation par rapport au laptop */
-    height: 80%;         /* Hauteur de l’animation */
-    z-index: 3;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-
-    .laptop-screen > div {
-      width: 100%;
-      height: 120%;
-    }
   
-    .interface-lottie {
-      position: absolute;
-      top: 0%;
-      left: -42%; 
-      width: 930px;
-      height: 830px;
-      z-index: 24;
-      pointer-events: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;  
-      clip-path: inset(0 0 0 35%);
-    }
-    
-    .interface-lottie > div {
-      width: 1600px;
-      height: 2800px;
-      object-fit: contain;
-      overflow: hidden;  /* Assure-toi de masquer les débordements */
-    }
-    
+  .swiper-button-next-custom,
+  .swiper-button-prev-custom {
+    background-color: transparent; /* Make navigation transparent on mobile */
+  }
+}
+
+/* Add these to your Caroussel.css file */
+.slide-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.about-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Update styles for each slide component */
+/* You may need to adjust these styles in each individual slide component */
+.row.position-absolute {
+  position: relative !important; /* Override absolute positioning */
+  height: auto !important;
+}
+
+/* For slide content */
+.row > div {
+  padding: 2rem;
+}
+
+@media (max-width: 767px) {
+  .row > div {
+    padding: 1rem;
+  }
   
+  /* Make text content more compact on mobile */
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  ul {
+    padding-left: 1rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+}

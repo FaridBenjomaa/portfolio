@@ -1,7 +1,7 @@
 import React from "react";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "../../css/Caroussel.css";
+import "../../css/SlideMobile.css";
 import mobileInterfaceAnimation from '../../assets/animations/mobile.json';
 import Lottie from 'lottie-react';
 
