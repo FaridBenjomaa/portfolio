@@ -17,17 +17,18 @@ const ServiceCard = ({ title, items, titleClass, listClass, blockClass }) => (
 const Services = () => {
   return (
     <section id="services" className="services-container bg-light">
+     
       <div className="hero-section text-center bg-light">
         <h1>Mes Services : Une Expertise Complète en Développement & Design</h1>
         <p>Développement, UI/UX, Motion Design, Identité Visuelle : je conçois des solutions digitales performantes dans les domaines où j'excelle :</p>
       </div>
 
+      <div className="global-vertical-line"></div>
       {/* Section 1 */}
-      <div className="services-section section-dark">
+      <div className="services-section section-bg">
         <div className="services-grid">
-          <div className="vertical-line"></div>
+           
           <div className="icon developpement-web-icon"></div>
-
           <ServiceCard
             title={`Développement Web & API`}
             items={[
@@ -38,20 +39,20 @@ const Services = () => {
               "Optimisation des performances backend & frontend",
               "Tests automatisés (unitaires & fonctionnels)",
               "CI/CD : Intégration et déploiement automatisé",
-              "Documentation d’API via Swagger / Postman"
+              "Documentation d'API via Swagger / Postman"
             ]}
-            titleClass="h3-primary"
-            listClass="ul-primary"
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
             blockClass="developpement-web right-align"
           />
-
         </div>
       </div>
 
       {/* Section 2 */}
-      <div className="services-section section-bg">
+      <section className="services-section section-dark">
+      <div className="services-section section-dark">
         <div className="services-grid">
-          <div className="vertical-line"></div>
+           
           <div className="icon design-uiux-icon"></div>
           <ServiceCard
             title={`Design UI/UX & Prototypage`}
@@ -62,10 +63,17 @@ const Services = () => {
               "Compétences : Wireframing, Prototypage interactif, Design system, Responsive Design,",
               "Ergonomie web, Tests utilisateurs, Adobe XD, Figma"
             ]}
-            titleClass="h3-secondary"
-            listClass="ul-secondary"
+            titleClass="h3-primary"
+            listClass="ul-primary"
             blockClass="design-uiux left-align"
           />
+        </div>
+      </div>
+
+      {/* Section 3 */}
+      <div className="services-section section-dark">
+        <div className="services-grid">
+           
           <div className="icon motion-design-icon"></div>
           <ServiceCard
             title={`Motion Design & Animations UI`}
@@ -75,10 +83,17 @@ const Services = () => {
               "Outils : After Effects, Lottie, Adobe Premiere",
               "Compétences : Animation UI/UX, transitions interactives, storytelling visuel"
             ]}
-            titleClass="h3-secondary"
-            listClass="ul-secondary"
+            titleClass="h3-primary"
+            listClass="ul-primary"
             blockClass="motion-design right-align"
           />
+        </div>
+      </div>
+
+      {/* Section 4 */}
+      <div className="services-section section-dark">
+        <div className="services-grid">
+           
           <div className="icon logos-identite-icon"></div>
           <ServiceCard
             title={`Création de Logos <br /> & <br /> Identité Visuelle`}
@@ -89,17 +104,19 @@ const Services = () => {
               "Compétences : création vectorielle, charte graphique, design typographique",
               "Supports : cartes de visite, affiches, mockups web & print"
             ]}
-            titleClass="h3-secondary"
-            listClass="ul-secondary"
+            titleClass="h3-primary"
+            listClass="ul-primary"
             blockClass="logos-identite left-align"
           />
         </div>
       </div>
+            </section>
 
-      {/* Section 3 */}
-      <div className="services-section section-dark">
+            <section className="services-section section-bg">
+      {/* Section 5 */}
+      <div className="services-section section-bg">
         <div className="services-grid">
-          <div className="vertical-line"></div>
+           
           <div className="icon developpement-mobile-icon"></div>
           <ServiceCard
             title={`Développement Mobile <br /> (iOS & Android)`}
@@ -112,10 +129,17 @@ const Services = () => {
               "Compétences : gestion des états, navigation, base de données embarquées",
               "Fonctionnalités : notifications push, géolocalisation, accès natif caméra"
             ]}
-            titleClass="h3-primary"
-            listClass="ul-primary"
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
             blockClass="developpement-mobile right-align"
           />
+        </div>
+      </div>
+
+      {/* Section 6 */}
+      <div className="services-section section-bg">
+        <div className="services-grid">
+           
           <div className="icon optimisation-icon"></div>
           <ServiceCard
             title={`Optimisation & Déploiement`}
@@ -126,12 +150,13 @@ const Services = () => {
               "Compétences : GitLab CI, Nginx, PM2, sécurité et monitoring",
               "Méthodes : automatisation des tests & déploiement, logs centralisés"
             ]}
-            titleClass="h3-primary"
-            listClass="ul-primary"
-            blockClass="optimisation"
+            titleClass="h3-secondary"
+            listClass="ul-secondary"
+            blockClass="optimisation left-align"
           />
         </div>
       </div>
+      </section>
     </section>
   );
 };

@@ -1,239 +1,448 @@
+/* Base styles */
 .services-container {
-  background-color: #f4f4f4;
-  margin-top:  60px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hero-section {
-  padding: 4rem 0;
-  background-color: white;
-  text-align: center;
-}
-
-.hero-section h1 {
-  font-size: 2.5rem;
-  color: #1F2A59;
-  margin-bottom: 1rem;
-}
-
-.services-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-  grid-auto-rows: auto; /* Ajuster automatiquement la hauteur des rangées */
-  gap: 4rem 10rem; /* Espacement vertical et horizontal */
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: visible; /* Empêche les enfants d'être coupés */
-  align-items: stretch; /* Ajout pour uniformiser la hauteur des colonnes */
 }
 
-.vertical-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px; /* Augmenter la largeur des pointillés */
-  border-left: 4px dashed #e0e0e0; /* Barre en pointillés plus large */
-  background-color: transparent;
-  transform: translateX(-50%);
-  z-index: 1; /* La barre doit être en dessous des icônes */
-  height: 100%; /* S'assurer que la barre couvre toute la hauteur */
+.hero-section h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #1F2A59;
 }
 
-.section-dark .vertical-line {
-  border-left: 4px dashed #000; /* Barre noire */
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.section-light .vertical-line {
-  border-left: 4px dashed #fff; /* Barre blanche */
-}
-
-.icon {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px; /* Augmentez ou réduisez cette valeur pour ajuster la largeur */
-  height: 60px; /* Augmentez ou réduisez cette valeur pour ajuster la hauteur */
-  background-size: contain; /* Assurez-vous que l'image s'adapte à la taille */
-  background-repeat: no-repeat;
-  z-index: 2; /* Assurez-vous que les icônes sont au-dessus de la barre verticale */
-  overflow: visible; /* Empêche les icônes d'être coupées */
-}
-
-.developpement-web-icon {
-  top: 50%; /* Position de l'icône */
-  background-image: url('../../public/img/icons/optimisation-icon.png');
-}
-
-.design-uiux-icon {
-  top: 20%;
-  background-image: url('../../public/img/icons/design-uiux-icon.png');
-}
-
-.motion-design-icon {
-  top: 50%;
-  background-image: url('../../public/img/icons/motion-design-icon.png');
-}
-
-.logos-identite-icon {
-  top: 85%;
-  background-image: url('../../public/img/icons/logos-identite-icon.png');
-}
-
-.developpement-mobile-icon {
-  top: 30%; /* Position verticale */
-  left: 51%; /* Décaler légèrement à droite (augmenter la valeur) */
-  background-image: url('../../public/img/icons/developpement-mobile-icon.png');
-}
-
-.optimisation-icon {
-  top: 75%;
-  background-image: url('../../public/img/icons/optimisation-icon.png');
-}
-
-.service-block {
-  background-color: white;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* Services sections */
+.services-section {
+  padding: 4rem 2rem;
   position: relative;
-  z-index: 10;
-  width: 100%; /* S'assurer que les cartes occupent toute la largeur */
-  max-width: 100%; /* S'assurer que les cartes ne dépassent pas la largeur de la grille */
-  min-height: 450px; /* Ajout pour uniformiser la taille des cartes */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Alignement uniforme du contenu */
 }
 
-.service-block.developpement-web {
+.section-dark {
   background-color: #1F2A59;
-}
-
-.service-block.design-uiux {
-  background-color: #ffffff;
-  grid-column: 1 / 2; /* Positionner à gauche */
-  grid-row: 1; /* Première rangée */
-}
-
-.service-block.motion-design {
-  background-color: #ffffff;
-  grid-column: 2 / 3; /* Positionner à droite */
-  grid-row: 2; /* Deuxième rangée */
-}
-
-.services-section .service-block.developpement-mobile {
-  grid-column: 2 / 3; /* Occuper toute la largeur */
-  margin-bottom: 0.5rem; /* Ajouter un espacement en bas */
-}
-
-.services-section .service-block.optimisation {
-  grid-column: 1 / 2; /* Occuper toute la largeur */
-  margin-top: 0.5rem; /* Ajouter un espacement en haut */
-}
-
-.service-block.logos-identite {
-  background-color: #ffffff;
-  grid-column: 1 / 2; /* Positionner à gauche */
-  grid-row: 3; /* Troisième rangée */
-}
-
-.service-block.developpement-mobile {
-  background-color: #1F2A59;
-}
-
-.service-block.optimisation {
-  background-color: #1F2A59;
-}
-
-.service-block:nth-child(odd) {
-  margin-top: 4rem;
-}
-
-.service-block:nth-child(even) {
-  margin-top: 6rem; /* Décalage pour alterner les cartes */
-}
-
-.service-block.left-align {
-  grid-column: 1 / 2; /* Positionner à gauche de la barre */
-  justify-self: start; /* Aligner la carte à gauche */
-}
-
-.service-block.right-align {
-  grid-column: 2 / 3; /* Positionner à droite de la barre */
-}
-
-.service-block.center-align {
-  grid-column: 1 / 3; /* Occuper toute la largeur */
-  text-align: center; /* Centrer le contenu */
-}
-
-.service-block.spaced-card {
-  margin-top: 6rem; /* Ajouter un espacement vertical supplémentaire */
-}
-
-.navbar {
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbar-nav .nav-link {
-  margin-left: 1rem;
-  color: #333;
+  color: white;
 }
 
 .section-bg {
-  background-image: url('../../public/img/backgrounds/tech-grid.png');
-  background-size: cover;
-  background-position: center;
+  background-color: #f5f5f5;
+  color: #1F2A59;
 }
 
+/* Grid layout */
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+}
+
+/* Vertical line */
+.vertical-line {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #00B4D8;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+/* Icon styles */
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #00B4D8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Service blocks */
+.service-block {
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  grid-column: 2;
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.right-align {
+  margin-left: auto;
+  width: 90%;
+  height: 100%;
+}
+
+
+.left-align {
+  margin-right: auto;
+  width: 90%;
+  height: 100%;
+}
+
+/* Title styles */
 .h3-primary {
-  font-size: 1.5rem;
-  color: #ffffff; /* Couleur principale */
-  font-weight: 300;
-  font-style: italic;
-  padding: 0.5rem 0;
-  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.h3-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #00B4D8;
 }
 
 .h3-secondary {
-  font-size: 1.5rem;
-  color: #1F2A59; /* Couleur secondaire */
-  font-weight: 300;
-  font-style: italic;
-  padding: 0.5rem 0;
-  text-align: center;
+  color: #1F2A59;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.ul-primary {
+.h3-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #00B4D8;
+}
+
+/* List styles */
+.ul-primary, .ul-secondary {
+  padding-left: 1.5rem;
   list-style-type: none;
-  padding: 0;
 }
-.ul-primary li {
-  margin-bottom: 0.5rem;
-  color: #ffffff; /* Couleur principale */
-  padding: 0.5rem 0;
 
+.ul-primary li, .ul-secondary li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.6;
 }
+
 .ul-primary li::before {
-  content: "•"; /* Utiliser un point pour la liste */
-  color: #ffffff; /* Couleur principale */
-  margin-right: 0.5rem;
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00B4D8;
 }
 
-.ul-secondary {
-  list-style-type: none;
-  padding: 0;
-}
-.ul-secondary li {
-  margin-bottom: 0.5rem;
-  color: #1F2A59; /* Couleur secondaire */
-  padding: 0.5rem 0;
-}
 .ul-secondary li::before {
-  content: "•"; /* Utiliser un point pour la liste */
-  color: #1F2A59; /* Couleur secondaire */
-  margin-right: 0.5rem;
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00B4D8;
+}
+
+/* Icon backgrounds */
+.developpement-web-icon {
+  background-image: url("../../src/assets/icons/design-uiux-icon.png");
+}
+
+.design-uiux-icon {
+  background-image: url("../../src/assets/icons/design-uiux-icon.png");
+}
+
+.motion-design-icon {
+  background-image: url("../../src/assets/icons/motion-design-icon.png");
+}
+
+.logos-identite-icon {
+  background-image: url("../../src/assets/icons/logos-identite-icon.png");
+}
+
+.developpement-mobile-icon {
+  background-image: url("../../src/assets/icons/motion-design-icon.png");
+}
+
+.optimisation-icon {
+  background-image: url("../../src/assets/icons/logos-identite-icon.png");
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .right-align,
+  .left-align {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+  }
+  
+  .vertical-line {
+    left: 30px;
+  }
+  
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .right-align,
+  .left-align {
+    max-width: 100%;
+  }
+  
+  .h3-primary,
+  .h3-secondary {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .services-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .vertical-line {
+    left: 30px;
+    height: calc(100% - 4rem);
+    top: 2rem;
+  }
+  
+  .icon {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .service-block {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .right-align,
+  .left-align {
+    margin-left: 0;
+    margin-right: 0;
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .services-section {
+    padding: 2rem 1rem;
+  }
+  
+  .service-block {
+    padding: 1.25rem;
+  }
+  
+  .h3-primary,
+  .h3-secondary {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ul-primary li, 
+  .ul-secondary li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-block {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Stagger the animations */
+.services-grid .service-block:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.services-grid .service-block:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.services-grid .service-block:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+/* Vertical line - default positioning (mobile) */
+.vertical-line {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #00B4D8;
+  transform: translateX(-50%);
+}
+
+/* Desktop styles (center the vertical line and align all icons) */
+@media (min-width: 769px) {
+  .services-grid {
+    grid-template-columns: 1fr 80px 1fr; /* Add a column for the vertical line in the center */
+    gap: 2rem; /* Add spacing between columns */
+  }
+
+  .global-vertical-line {
+    right: 0; /* Déplace la ligne vers la droite sur mobile */
+    left: auto; /* Annule la position par défaut à gauche */
+    height: calc(100% - 4rem); /* Ajuster la hauteur si nécessaire */
+  }
+
+  .icon {
+    position: relative; /* Position icons relative to their grid cell */
+    margin: 0 auto; /* Center icons in their column */
+    z-index: 2; /* Ensure icons are visible */
+  }
+
+  .service-block {
+    grid-column: auto; /* Reset column placement */
+    margin: 0; /* Remove auto-centering */
+  }
+
+  .right-align {
+    grid-column: 3; /* Place in the right column */
+    margin-left: auto; /* Align to the right */
+    margin-right: 0;
+  }
+
+  .left-align {
+    grid-column: 1; /* Place in the left column */
+    margin-right: auto; /* Align to the left */
+    margin-left: 0;
+  }
+
+  /* Ensure icons are aligned with the vertical line */
+  .developpement-web-icon,
+  .design-uiux-icon,
+  .motion-design-icon,
+  .logos-identite-icon,
+  .developpement-mobile-icon,
+  .optimisation-icon {
+    grid-column: 2; /* Place icons in the center column */
+    margin-top: 2rem; /* Add spacing between icons */
+  }
+
+  /* Stagger Motion Design card */
+  .motion-design-icon {
+    margin-top: 4rem; /* Add vertical spacing to stagger below Design UI/UX */
+  }
+
+  .motion-design-icon + .service-block {
+    margin-top: 4rem; /* Ensure the card aligns with the icon */
+  }
+}
+
+.services-container {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative; /* Important pour contenir la ligne verticale */
+}
+
+/* Correction de la position de la ligne bleue verticale */
+.global-vertical-line {
+  position: absolute;
+  left: 50%; /* Default position for larger screens */
+  top: 10%;
+  bottom: 10%;
+  height: 100%;
+  width: 2px;
+  background-color: #00B4D8;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .global-vertical-line {
+    position: absolute;
+    left: 9%; /* Position the line behind the cards */
+    top: 9%;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #00B4D8;
+    z-index: 1; /* Ensure the line is behind the cards */
+  }
+
+  .service-block {
+    position: relative;
+    z-index: 1; /* Ensure the cards are above the line */
+  }
 }
