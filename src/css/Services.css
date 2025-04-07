@@ -411,13 +411,13 @@
 
 .services-container {
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative; /* Important pour contenir la ligne verticale */
 }
 
 /* Correction de la position de la ligne bleue verticale */
 .global-vertical-line {
-  position: absolute;
+  position: fixed;
   left: 50%; /* Default position for larger screens */
   top: 10%;
   bottom: 10%;
