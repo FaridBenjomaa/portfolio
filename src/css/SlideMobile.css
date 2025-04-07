@@ -1,0 +1,30 @@
+.right-smartphone {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile-animation-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .right-smartphone {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  p, li {
+    font-size: 0.9rem;
+  }
+}
