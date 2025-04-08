@@ -436,4 +436,14 @@
     position: relative;
     z-index: 1; /* Ensure the cards are above the line */
   }
+
+   .icon {
+    position: relative; /* Position icons relative to their grid cell */
+    margin: 0 -2%; /* Center icons in their column */
+    z-index: 2; /* Ensure icons are visible */
+  }
+
+  .developpement-web-icon {
+    margin: 0 1%; /* Center icons in their column */
+  }
 }
