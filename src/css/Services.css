@@ -341,16 +341,6 @@
   animation-delay: 0.3s;
 }
 
-/* Vertical line - default positioning (mobile) */
-.vertical-line {
-  position: absolute;
-  left: 40px;
-  top: 0;
-  height: 100%;
-  width: 2px;
-  background-color: #00B4D8;
-  transform: translateX(-50%);
-}
 
 /* Desktop styles (center the vertical line and align all icons) */
 @media (min-width: 769px) {
@@ -363,6 +353,7 @@
     right: 0; /* Déplace la ligne vers la droite sur mobile */
     left: auto; /* Annule la position par défaut à gauche */
     height: calc(100% - 4rem); /* Ajuster la hauteur si nécessaire */
+    z-index: 1; /* Ensure the line is behind the cards */
   }
 
   .icon {
@@ -417,11 +408,11 @@
 
 /* Correction de la position de la ligne bleue verticale */
 .global-vertical-line {
-  position: fixed;
+  position: absolute;
   left: 50%; /* Default position for larger screens */
   top: 10%;
   bottom: 10%;
-  height: 100%;
+  height: 90%;
   width: 2px;
   background-color: #00B4D8;
   transform: translateX(-50%);
