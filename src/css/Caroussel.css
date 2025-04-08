@@ -6,7 +6,7 @@
 }
 
 .swiper {
-  overflow: visible; /* Changed from overflow-x to handle both directions */
+  overflow: hidden; /* Changed from overflow-x to handle both directions */
   height: 100%; /* Make swiper take full height */
 }
 

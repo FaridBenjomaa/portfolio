@@ -17,11 +17,11 @@ const Footer = () => {
           <div className="col-md-4 mb-4">
             <h6 className="footer-heading">Navigation</h6>
             <ul className="list-unstyled footer-links">
-              <li><Link to="/#hero">Accueil</Link></li>
-              <li><Link to="/#about">À propos</Link></li>
-              <li><Link to="/services">Mes Services</Link></li>
-              <li><Link to="/projets">Projets</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/#hero" onClick={() => { window.scrollTo(0, 0); }}>Accueil</Link></li>
+              <li><Link to="/#about" onClick={() => { }}>À propos</Link></li>
+              <li><Link to="/services" onClick={() => { window.scrollTo(0, 0); }}>Mes Services</Link></li>
+              <li><Link to="/projets" onClick={() => { window.scrollTo(0, 0); }}>Projets</Link></li>
+              <li><Link to="/contact" onClick={() => { window.scrollTo(0, 0); }}>Contact</Link></li>
             </ul>
           </div>
           

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../css/Header.css";
@@ -6,10 +6,24 @@ import useSectionInView from "../../hooks/useSectionInView";
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);  // Ajouter l'état pour contrôler le menu
     const isHeroVisible = useSectionInView("hero");
     const isAboutVisible = useSectionInView("about");
     const isAboutVisible2 = useSectionInView("about2");
     const location = useLocation();
+
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);  // Fonction pour fermer le menu
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0); // Défilement vers le haut de la page
+    };
+
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -23,23 +37,23 @@ const Header = () => {
                 <button
                     className="navbar-toggler"
                     type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
+                    onClick={handleMenuToggle}  // Toggle le menu quand on clique sur le bouton burger
                     aria-controls="navbarNav"
-                    aria-expanded="false"
+                    aria-expanded={isMenuOpen ? "true" : "false"}  // Si le menu est ouvert, l'aria-expanded doit être "true"
                     aria-label="Toggle navigation"
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 {/* Liens de Navigation et Icônes Sociales */}
-                <div className="collapse navbar-collapse" id="navbarNav">
+                <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarNav">
                     <div className="navbar-menu-container">
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <a
                                     href="/#hero"
                                     className={`nav-link ${isHeroVisible ? "active" : ""}`}
+                                    onClick={() => { closeMenu(); scrollToTop(); }}  // Ferme le menu et fait défiler vers le haut
                                 >
                                     Accueil
                                 </a>
@@ -48,6 +62,7 @@ const Header = () => {
                                 <a
                                     href="/#about"
                                     className={`nav-link ${isAboutVisible || isAboutVisible2 ? "active" : ""}`}
+                                    onClick={closeMenu}  // Ferme le menu après le clic
                                 >
                                     À Propos
                                 </a>
@@ -56,6 +71,7 @@ const Header = () => {
                                 <Link
                                     to="/services"
                                     className={`nav-link ${location.pathname === "/services" ? "active" : ""}`}
+                                    onClick={() => { closeMenu(); scrollToTop(); }}  // Ferme le menu et fait défiler vers le haut
                                 >
                                     Mes Services
                                 </Link>
@@ -64,6 +80,7 @@ const Header = () => {
                                 <Link
                                     to="/projets"
                                     className={`nav-link ${location.pathname === "/projets" ? "active" : ""}`}
+                                    onClick={() => { closeMenu(); scrollToTop(); }}  // Ferme le menu et fait défiler vers le haut
                                 >
                                     Projets
                                 </Link>
@@ -72,6 +89,7 @@ const Header = () => {
                                 <Link
                                     to="/contact"
                                     className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}
+                                    onClick={() => { closeMenu(); scrollToTop(); }}  // Ferme le menu et fait défiler vers le haut
                                 >
                                     Contact
                                 </Link>

@@ -1,5 +1,6 @@
 /* Base styles */
 .services-container {
+  margin-top: 2%;
   width: 100%;
   overflow-x: hidden;
 }
@@ -401,6 +402,7 @@
 }
 
 .services-container {
+  margin-top: 2%;
   width: 100%;
   overflow: hidden;
   position: relative; /* Important pour contenir la ligne verticale */
@@ -446,4 +448,11 @@
   .developpement-web-icon {
     margin: 0 1%; /* Center icons in their column */
   }
+
+  .services-container {
+    margin-top: 10%;
+  }
+  
+
+
 }
