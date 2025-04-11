@@ -1,10 +1,28 @@
-/* Base styles */
+/* Déclaration des variables CSS globales */
+:root {
+  --primary-color: #1F2A59;
+  --secondary-color: #00B4D8;
+  --light-bg: #f5f5f5;
+  --dark-bg: #1F2A59;
+  --white: #ffffff;
+  --font-size-h1: 2.5rem;
+  --font-size-h3: 1.8rem;
+  --font-size-h1-mobile: 1.5rem;
+  --font-size-h3-mobile: 1.3rem;
+  --font-size-p: 1.2rem;
+}
+
+/* ============================
+   BASE & CONTAINER STYLES
+   ============================ */
 .services-container {
   margin-top: 2%;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative; /* Nécessaire pour contenir la ligne verticale */
 }
 
+/* Hero Section */
 .hero-section {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -13,33 +31,36 @@
 
 .hero-section h1 {
   margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  color: #1F2A59;
+  font-size: var(--font-size-h1);
+  color: var(--primary-color);
 }
 
 .hero-section p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-p);
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Services sections */
+/* ============================
+   SERVICES SECTIONS & GRID
+   ============================ */
 .services-section {
   padding: 4rem 2rem;
   position: relative;
 }
 
+/* Variantes de sections */
 .section-dark {
-  background-color: #1F2A59;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
 .section-bg {
-  background-color: #f5f5f5;
-  color: #1F2A59;
+  background-color: var(--light-bg);
+  color: var(--primary-color);
 }
 
-/* Grid layout */
+/* Grille principale */
 .services-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -49,35 +70,54 @@
   gap: 2rem;
 }
 
-/* Vertical line */
-.vertical-line {
+/* Ligne verticale globale */
+.global-vertical-line {
   position: absolute;
-  left: 40px;
-  top: 0;
-  height: 100%;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  height: 90%;
   width: 2px;
-  background-color: #00B4D8;
-  z-index: 1;
+  background-color: var(--secondary-color);
   transform: translateX(-50%);
+  z-index: 1;
 }
 
-/* Icon styles */
+/* ============================
+   ICON ET SERVICE BLOCKS
+   ============================ */
+/* Icones */
 .icon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #00B4D8;
+  background-color: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 2;
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 2;
 }
 
-/* Service blocks */
+/* Backgrounds spécifiques pour les icônes */
+.developpement-web-icon,
+.design-uiux-icon {
+  background-image: url("../../src/assets/icons/design-uiux-icon.png");
+}
+
+.motion-design-icon,
+.developpement-mobile-icon {
+  background-image: url("../../src/assets/icons/motion-design-icon.png");
+}
+
+.logos-identite-icon,
+.optimisation-icon {
+  background-image: url("../../src/assets/icons/logos-identite-icon.png");
+}
+
+/* Blocs de service */
 .service-block {
   padding: 2rem;
   border-radius: 8px;
@@ -86,6 +126,7 @@
   grid-column: 2;
   margin-bottom: 3rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .service-block:hover {
@@ -93,12 +134,12 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Aides à l'alignement */
 .right-align {
   margin-left: auto;
   width: 90%;
   height: 100%;
 }
-
 
 .left-align {
   margin-right: auto;
@@ -106,33 +147,27 @@
   height: 100%;
 }
 
-/* Title styles */
-.h3-primary {
-  color: #ffffff;
-  font-size: 1.8rem;
+/* ============================
+   TITRES & LISTES
+   ============================ */
+/* Titres */
+.h3-primary,
+.h3-secondary {
+  font-size: var(--font-size-h3);
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
 }
 
-.h3-primary::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: #00B4D8;
+.h3-primary {
+  color: var(--white);
 }
 
 .h3-secondary {
-  color: #1F2A59;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
+.h3-primary::after,
 .h3-secondary::after {
   content: '';
   position: absolute;
@@ -140,62 +175,62 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #00B4D8;
+  background-color: var(--secondary-color);
 }
 
-/* List styles */
-.ul-primary, .ul-secondary {
+/* Listes */
+.ul-primary,
+.ul-secondary {
   padding-left: 1.5rem;
   list-style-type: none;
 }
 
-.ul-primary li, .ul-secondary li {
+.ul-primary li,
+.ul-secondary li {
   margin-bottom: 0.75rem;
   position: relative;
   padding-left: 1.5rem;
   line-height: 1.6;
 }
 
-.ul-primary li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #00B4D8;
-}
-
+.ul-primary li::before,
 .ul-secondary li::before {
   content: '→';
   position: absolute;
   left: 0;
-  color: #00B4D8;
+  color: var(--secondary-color);
 }
 
-/* Icon backgrounds */
-.developpement-web-icon {
-  background-image: url("../../src/assets/icons/design-uiux-icon.png");
+/* ============================
+   ANIMATIONS
+   ============================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.design-uiux-icon {
-  background-image: url("../../src/assets/icons/design-uiux-icon.png");
+/* Staggering des délais d'animation */
+.services-grid .service-block:nth-child(2) {
+  animation-delay: 0.1s;
 }
 
-.motion-design-icon {
-  background-image: url("../../src/assets/icons/motion-design-icon.png");
+.services-grid .service-block:nth-child(4) {
+  animation-delay: 0.2s;
 }
 
-.logos-identite-icon {
-  background-image: url("../../src/assets/icons/logos-identite-icon.png");
+.services-grid .service-block:nth-child(6) {
+  animation-delay: 0.3s;
 }
 
-.developpement-mobile-icon {
-  background-image: url("../../src/assets/icons/motion-design-icon.png");
-}
-
-.optimisation-icon {
-  background-image: url("../../src/assets/icons/logos-identite-icon.png");
-}
-
-/* Responsive styles */
+/* ============================
+   RESPONSIVE STYLES
+   ============================ */
 @media (max-width: 1200px) {
   .right-align,
   .left-align {
@@ -217,7 +252,7 @@
     gap: 1.5rem;
   }
   
-  .vertical-line {
+  .global-vertical-line {
     left: 30px;
   }
   
@@ -255,14 +290,13 @@
     gap: 1rem;
   }
   
-  .vertical-line {
+  .global-vertical-line {
     left: 30px;
     height: calc(100% - 4rem);
     top: 2rem;
   }
   
   .icon {
-    margin-left: 0;
     margin-bottom: 1rem;
   }
   
@@ -273,8 +307,7 @@
   
   .right-align,
   .left-align {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     grid-column: 1;
   }
 }
@@ -285,7 +318,7 @@
   }
   
   .hero-section h1 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h1-mobile);
   }
   
   .hero-section p {
@@ -302,157 +335,121 @@
   
   .h3-primary,
   .h3-secondary {
-    font-size: 1.3rem;
+    font-size: var(--font-size-h3-mobile);
     margin-bottom: 1rem;
   }
   
-  .ul-primary li, 
+  .ul-primary li,
   .ul-secondary li {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.service-block {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Stagger the animations */
-.services-grid .service-block:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.services-grid .service-block:nth-child(4) {
-  animation-delay: 0.2s;
-}
-
-.services-grid .service-block:nth-child(6) {
-  animation-delay: 0.3s;
-}
-
-
-/* Desktop styles (center the vertical line and align all icons) */
-@media (min-width: 769px) {
-  .services-grid {
-    grid-template-columns: 1fr 80px 1fr; /* Add a column for the vertical line in the center */
-    gap: 2rem; /* Add spacing between columns */
-  }
-
+/* Styles spécifiques pour mobile (max-width: 767px) */
+@media (max-width: 767px) {
   .global-vertical-line {
-    right: 0; /* Déplace la ligne vers la droite sur mobile */
-    left: auto; /* Annule la position par défaut à gauche */
-    height: calc(100% - 4rem); /* Ajuster la hauteur si nécessaire */
-    z-index: 1; /* Ensure the line is behind the cards */
+    left: 9%;
+    top: 9%;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--secondary-color);
+    z-index: 1;
   }
-
-  .icon {
-    position: relative; /* Position icons relative to their grid cell */
-    margin: 0 auto; /* Center icons in their column */
-    z-index: 2; /* Ensure icons are visible */
-  }
-
+  
   .service-block {
-    grid-column: auto; /* Reset column placement */
-    margin: 0; /* Remove auto-centering */
+    position: relative;
+    z-index: 1;
   }
+  
+  .icon {
+    position: relative;
+    margin: 0 -2%;
+    z-index: 2;
+  }
+  
+  .developpement-web-icon {
+    margin: 0 1%;
+  }
+  
+  .services-container {
+    margin-top: 10%;
+  }
+}
 
+/* ============================
+   DESKTOP STYLES
+   ============================ */
+@media (min-width: 769px) {
+  /* Modification de la grille pour inclure une colonne centrale pour la ligne verticale */
+  .services-grid {
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 2rem;
+  }
+  
+  .global-vertical-line {
+    right: 0;
+    left: auto;
+    height: calc(100% - 4rem);
+    z-index: 1;
+  }
+  
+  .icon {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .service-block {
+    grid-column: auto;
+    margin: 0;
+  }
+  
   .right-align {
-    grid-column: 3; /* Place in the right column */
-    margin-left: auto; /* Align to the right */
+    grid-column: 3;
+    margin-left: auto;
     margin-right: 0;
   }
-
+  
   .left-align {
-    grid-column: 1; /* Place in the left column */
-    margin-right: auto; /* Align to the left */
+    grid-column: 1;
+    margin-right: auto;
     margin-left: 0;
   }
-
-  /* Ensure icons are aligned with the vertical line */
+  
+  /* Aligner les icônes dans la colonne centrale */
   .developpement-web-icon,
   .design-uiux-icon,
   .motion-design-icon,
   .logos-identite-icon,
   .developpement-mobile-icon,
   .optimisation-icon {
-    grid-column: 2; /* Place icons in the center column */
-    margin-top: 2rem; /* Add spacing between icons */
-  }
-
-  /* Stagger Motion Design card */
-  .motion-design-icon {
-    margin-top: 4rem; /* Add vertical spacing to stagger below Design UI/UX */
-  }
-
-  .motion-design-icon + .service-block {
-    margin-top: 4rem; /* Ensure the card aligns with the icon */
-  }
-}
-
-.services-container {
-  margin-top: 2%;
-  width: 100%;
-  overflow: hidden;
-  position: relative; /* Important pour contenir la ligne verticale */
-}
-
-/* Correction de la position de la ligne bleue verticale */
-.global-vertical-line {
-  position: absolute;
-  left: 50%; /* Default position for larger screens */
-  top: 10%;
-  bottom: 10%;
-  height: 90%;
-  width: 2px;
-  background-color: #00B4D8;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* Mobile-specific styles */
-@media (max-width: 767px) {
-  .global-vertical-line {
-    position: absolute;
-    left: 9%; /* Position the line behind the cards */
-    top: 9%;
-    bottom: 0;
-    height: 100%;
-    width: 2px;
-    background-color: #00B4D8;
-    z-index: 1; /* Ensure the line is behind the cards */
-  }
-
-  .service-block {
-    position: relative;
-    z-index: 1; /* Ensure the cards are above the line */
-  }
-
-   .icon {
-    position: relative; /* Position icons relative to their grid cell */
-    margin: 0 -2%; /* Center icons in their column */
-    z-index: 2; /* Ensure icons are visible */
-  }
-
-  .developpement-web-icon {
-    margin: 0 1%; /* Center icons in their column */
-  }
-
-  .services-container {
-    margin-top: 10%;
+    grid-column: 2;
+    margin-top: 2rem;
   }
   
-
-
+  /* Décalage pour stagger l'icône et le bloc Motion Design */
+  .motion-design-icon {
+    margin-top: 4rem;
+  }
+  
+  .motion-design-icon + .service-block {
+    margin-top: 4rem;
+  }
+}
+@media (min-width: 769px) {
+  .services-grid {
+    grid-template-columns: 1fr 80px 1fr; /* 3 colonnes dont la colonne du milieu est dédiée à la barre et aux icônes */
+    gap: 2rem;
+  }
+  
+  .global-vertical-line {
+    left: 50%;         /* Positionne la barre à 50% de la largeur */
+    right: auto;       /* Annule la propriété right pour éviter le décalage */
+    transform: translateX(-50%); /* Centre précisément la barre */
+    height: calc(100% - 4rem); /* Ajuste la hauteur si nécessaire */
+    z-index: 1;
+  }
+  
+  /* ... Vos autres règles pour le desktop */
 }

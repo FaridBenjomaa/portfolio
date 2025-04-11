@@ -17,17 +17,18 @@ const ServiceCard = ({ title, items, titleClass, listClass, blockClass }) => (
 const Services = () => {
   return (
     <section id="services" className="services-container bg-light">
-     
       <div className="hero-section text-center bg-light">
         <h1>Mes Services : Une Expertise Complète en Développement & Design</h1>
-        <p>Développement, UI/UX, Motion Design, Identité Visuelle : je conçois des solutions digitales performantes dans les domaines où j'excelle :</p>
+        <p>
+          Développement, UI/UX, Motion Design, Identité Visuelle : je conçois des solutions digitales performantes dans les domaines où j'excelle :
+        </p>
       </div>
 
       <div className="global-vertical-line"></div>
+
       {/* Section 1 */}
       <div className="services-section section-bg">
         <div className="services-grid">
-           
           <div className="icon developpement-web-icon"></div>
           <ServiceCard
             title={`Développement Web & API`}
@@ -50,9 +51,7 @@ const Services = () => {
 
       {/* Section 2 */}
       <section className="services-section section-dark">
-      <div className="services-section section-dark">
         <div className="services-grid">
-           
           <div className="icon design-uiux-icon"></div>
           <ServiceCard
             title={`Design UI/UX & Prototypage`}
@@ -68,12 +67,11 @@ const Services = () => {
             blockClass="design-uiux left-align"
           />
         </div>
-      </div>
+      </section>
 
       {/* Section 3 */}
       <div className="services-section section-dark">
         <div className="services-grid">
-           
           <div className="icon motion-design-icon"></div>
           <ServiceCard
             title={`Motion Design & Animations UI`}
@@ -93,7 +91,6 @@ const Services = () => {
       {/* Section 4 */}
       <div className="services-section section-dark">
         <div className="services-grid">
-           
           <div className="icon logos-identite-icon"></div>
           <ServiceCard
             title={`Création de Logos <br /> & <br /> Identité Visuelle`}
@@ -110,13 +107,10 @@ const Services = () => {
           />
         </div>
       </div>
-            </section>
 
-            <section className="services-section section-bg">
-      {/* Section 5 */}
-      <div className="services-section section-bg">
+      {/* Sections 5 et 6 */}
+      <section className="services-section section-bg">
         <div className="services-grid">
-           
           <div className="icon developpement-mobile-icon"></div>
           <ServiceCard
             title={`Développement Mobile <br /> (iOS & Android)`}
@@ -134,12 +128,8 @@ const Services = () => {
             blockClass="developpement-mobile right-align"
           />
         </div>
-      </div>
 
-      {/* Section 6 */}
-      <div className="services-section section-bg">
         <div className="services-grid">
-           
           <div className="icon optimisation-icon"></div>
           <ServiceCard
             title={`Optimisation & Déploiement`}
@@ -155,7 +145,6 @@ const Services = () => {
             blockClass="optimisation left-align"
           />
         </div>
-      </div>
       </section>
     </section>
   );
